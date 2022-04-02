@@ -82,13 +82,13 @@ const init = () => {
 
       const username = loginForm.querySelector('#user').value;
       const pass = loginForm.querySelector('#pass').value;
-
+      const _csrf = loginForm.querySelector('#_csrf').value;
       if(!username || !pass) {
         handleError('Username or password is empty!');
         return false;
       }
 
-      sendPost(loginForm.getAttribute('action'), {username, pass});
+      sendPost(loginForm.getAttribute('action'), {username, pass, _csrf});
       return false;
     });
   }
